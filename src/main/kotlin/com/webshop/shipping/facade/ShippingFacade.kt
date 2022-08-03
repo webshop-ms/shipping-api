@@ -8,8 +8,10 @@ import org.springframework.stereotype.Component
 @Component
 class ShippingFacade(val shippingService: ShippingService) {
 
-    fun getAllShipping(): MutableIterable<Shipping> {
-        return shippingService.getAllShipping()
+    fun getAllShipping(): MutableList<ShippingDto> {
+        val shippings: MutableIterable<Shipping> = shippingService.getAllShipping()
+        val dtos: MutableList<ShippingDto> = shippings.map(this::shippingToDtoTransformer).toMutableList()
+        return dtos
     }
 
     fun shippingToDtoTransformer(shipping: Shipping): ShippingDto {
