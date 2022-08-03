@@ -2,8 +2,10 @@ package com.webshop.shipping.entity
 
 import java.util.*
 import javax.persistence.Entity
+import javax.persistence.Table
 
 @Entity
+@Table(name = "shippings")
 class Shipping(
         val zip: Int,
         val city: String,
