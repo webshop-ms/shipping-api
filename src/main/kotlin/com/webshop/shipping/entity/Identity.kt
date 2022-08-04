@@ -14,11 +14,11 @@ abstract class Identity(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         // @EqualsAndHashCode.Include
-        val id: Int,
+        var id: Int? = null,
 
         @Column(name = "uuid", unique = true, updatable = false)
         @GeneratorType(type = UuidGenerator::class, `when` = GenerationTime.INSERT)
         @Type(type = "uuid-char")
-        val uuid: UUID
+        var uuid: UUID? = null
 
 )

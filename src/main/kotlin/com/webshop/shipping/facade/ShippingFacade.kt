@@ -16,7 +16,8 @@ class ShippingFacade(val shippingService: ShippingService) {
 
     fun shippingToDtoTransformer(shipping: Shipping): ShippingDto {
         return ShippingDto(
-                shipping.uuid.toString(),
+                shipping.uuid,
+                shipping.zip,
                 shipping.city,
                 shipping.street,
                 shipping.streetNumber,
@@ -28,8 +29,13 @@ class ShippingFacade(val shippingService: ShippingService) {
         shippingService.createShipping(shippingDtoToEntity(shippingDto))
     }
 
-    // TODO("dto transformation")
     fun shippingDtoToEntity(shippingDto: ShippingDto): Shipping {
-        throw UnsupportedOperationException()
+        val shipping = Shipping(shippingDto.zip,
+                shippingDto.city,
+                shippingDto.street,
+                shippingDto.streetNumber,
+                shippingDto.status)
+        shipping.uuid = shippingDto.id
+        return shipping
     }
 }
