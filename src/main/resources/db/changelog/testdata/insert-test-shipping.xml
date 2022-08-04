@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="insert-test-shippings" author="sztorma" context="test">
+        <insert tableName="shippings">
+            <column name="id" value="1"/>
+            <column name="uuid" value="49d224f2-02e6-47cc-a928-74a08e40937a"/>
+            <column name="order_id" value="29af334c-0aa3-4524-8e57-cf2ba42c5823"/>
+            <column name="zip" value="6060"/>
+            <column name="city" value="Tiszakecske"/>
+            <column name="street" value="Bajza utca"/>
+            <column name="street_number" value="30"/>
+            <column name="status" value="SHIPPED"/>
+        </insert>
+        <insert tableName="shippings">
+            <column name="id" value="1"/>
+            <column name="uuid" value="6a5b2222-ad4f-44a1-a3fb-1506914fed8a"/>
+            <column name="order_id" value="42cbefe3-2f21-4dde-946e-3485c75135bf"/>
+            <column name="zip" value="2017"/>
+            <column name="city" value="Miami"/>
+            <column name="street" value="Palm beach drive"/>
+            <column name="street_number" value="32"/>
+            <column name="status" value="RETURNED"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
