@@ -17,6 +17,7 @@ class ShippingFacade(val shippingService: ShippingService) {
     fun shippingToDtoTransformer(shipping: Shipping): ShippingDto {
         return ShippingDto(
                 shipping.uuid,
+                shipping.orderId,
                 shipping.zip,
                 shipping.city,
                 shipping.street,
@@ -30,7 +31,8 @@ class ShippingFacade(val shippingService: ShippingService) {
     }
 
     fun shippingDtoToEntity(shippingDto: ShippingDto): Shipping {
-        val shipping = Shipping(shippingDto.zip,
+        val shipping = Shipping(shippingDto.orderId,
+                shippingDto.zip,
                 shippingDto.city,
                 shippingDto.street,
                 shippingDto.streetNumber,

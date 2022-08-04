@@ -1,7 +1,7 @@
 package com.webshop.shipping.entity
 
 enum class ShippingStatus {
-    WATING,
+    WAITING,
     SHPPING,
     SHIPPED,
     RETURNING,

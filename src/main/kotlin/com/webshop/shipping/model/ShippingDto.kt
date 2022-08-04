@@ -5,6 +5,7 @@ import java.util.*
 
 class ShippingDto(
         val id: UUID?,
+        val orderId: UUID,
         val zip: Int,
         val city: String,
         val street: String,
