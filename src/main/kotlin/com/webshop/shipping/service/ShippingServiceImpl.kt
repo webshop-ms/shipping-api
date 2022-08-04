@@ -11,4 +11,8 @@ class ShippingServiceImpl(val shippingDao: ShippingDao) : ShippingService {
         return shippingDao.getAllShipping()
     }
 
+    override fun createShipping(shipping: Shipping) {
+        return shippingDao.createShipping(shipping)
+    }
+
 }

@@ -5,5 +5,6 @@ import com.webshop.shipping.entity.Shipping
 interface ShippingDao {
 
     fun getAllShipping(): MutableIterable<Shipping>
+    fun createShipping(shipping: Shipping)
 
 }

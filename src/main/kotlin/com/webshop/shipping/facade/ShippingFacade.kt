@@ -23,4 +23,13 @@ class ShippingFacade(val shippingService: ShippingService) {
                 shipping.status
         )
     }
+
+    fun createShipping(shippingDto: ShippingDto) {
+        shippingService.createShipping(shippingDtoToEntity(shippingDto))
+    }
+
+    // TODO("dto transformation")
+    fun shippingDtoToEntity(shippingDto: ShippingDto): Shipping {
+        throw UnsupportedOperationException()
+    }
 }

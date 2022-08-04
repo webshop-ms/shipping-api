@@ -10,4 +10,8 @@ class ShippingDaoImpl(val shippingRepository: ShippingRepository) : ShippingDao 
     override fun getAllShipping(): MutableIterable<Shipping> {
         return shippingRepository.findAll()
     }
+
+    override fun createShipping(shipping: Shipping) {
+        shippingRepository.save(shipping)
+    }
 }

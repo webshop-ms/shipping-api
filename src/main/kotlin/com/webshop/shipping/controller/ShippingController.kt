@@ -4,9 +4,7 @@ import com.webshop.shipping.facade.ShippingFacade
 import com.webshop.shipping.model.ShippingDto
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/shippings")
@@ -18,4 +16,9 @@ class ShippingController(val shippingFacade: ShippingFacade) {
         return ResponseEntity(dtos, HttpStatus.OK)
     }
 
+    @PostMapping
+    fun createShipping(@RequestBody shippingDto: ShippingDto): ResponseEntity<Void> {
+        shippingFacade.createShipping(shippingDto)
+        return ResponseEntity(HttpStatus.CREATED)
+    }
 }
