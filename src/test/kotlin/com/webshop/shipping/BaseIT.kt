@@ -10,13 +10,18 @@ import org.testcontainers.junit.jupiter.Testcontainers
 @Testcontainers
 open class BaseIT {
 
-    @Container
-    val mysql: MySQLContainer<*> = MySQLContainer("mysql:latest")
+    companion object {
 
-    fun mysqlProperties(registry: DynamicPropertyRegistry) {
-        registry.add("spring.datasource.url") { mysql.getJdbcUrl() }
-        registry.add("spring.datasource.username") { mysql.getUsername() }
-        registry.add("spring.datasource.password") { mysql.getPassword() }
+        @JvmField
+        @Container
+        val mysql: MySQLContainer<*> = MySQLContainer("mysql:latest")
+
+        @JvmStatic
+        fun mysqlProperties(registry: DynamicPropertyRegistry) {
+            registry.add("spring.datasource.url") { mysql.getJdbcUrl() }
+            registry.add("spring.datasource.username") { mysql.getUsername() }
+            registry.add("spring.datasource.password") { mysql.getPassword() }
+        }
     }
 
 }
