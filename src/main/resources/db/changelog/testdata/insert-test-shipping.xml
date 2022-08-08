@@ -17,7 +17,7 @@
             <column name="status" value="SHIPPED"/>
         </insert>
         <insert tableName="shippings">
-            <column name="id" value="1"/>
+            <column name="id" value="2"/>
             <column name="uuid" value="6a5b2222-ad4f-44a1-a3fb-1506914fed8a"/>
             <column name="order_id" value="42cbefe3-2f21-4dde-946e-3485c75135bf"/>
             <column name="zip" value="2017"/>
